@@ -68,6 +68,7 @@ module.exports = {
         origem,
         destino,
         valor,
+        vinculo,
         motivo,
         tipo,
         registro,
@@ -78,6 +79,7 @@ module.exports = {
       <h3>Dados da ocorrência</h3>
       <ul>
         <li><strong>Placa:</strong> ${placa ? placa : ""}</li>
+        <li><strong>Vínculo:</strong> ${vinculo ? vinculo : ""}</li>
         <li><strong>Origem:</strong> ${origem ? origem : ""}</li>
         <li><strong>Destino:</strong> ${destino ? destino : ""}</li>
         <li><strong>Valor da carga:</strong> ${valor ? valor : ""}</li>
@@ -108,10 +110,10 @@ module.exports = {
       transporter
         .sendMail({
           from: "ccom.ocorrencias@gmail.com",
-          to: `${emailPorFilial(origem)}`,
+          to: `camila.becker01@gmail.com`,
           cc:
-            "ccom.controle@modular.com.br, ccom.gestao@modular.com.br, giulian@modular.com.br, jessica.maiser@modular.com.br, alberi.silva@modular.com.br, rice@modular.com.br",
-          subject: `Registro de Ocorrência - ${motivo} ${placa} / ${origem} - ${valor}`,
+            "giulian@modular.com.br",
+          subject: `Registro de Ocorrência - ${motivo}(${vinculo}) ${placa} / ${origem} - ${valor}`,
           text: "",
           html: output,
         })
@@ -127,6 +129,7 @@ module.exports = {
         origem,
         destino,
         valor,
+        vinculo,
         motivo,
         tipo,
         registro,
