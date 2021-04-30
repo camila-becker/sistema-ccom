@@ -72,7 +72,7 @@ module.exports = {
   async delete(req, res) {
     try {
       const { id } = req.params;
-      const usuarios = await usuarios.destroy({ where: { id } });
+      const usuarios = await Usuarios.destroy({ where: { id } });
       return res.json(usuarios);
     } catch (error) {
       console.log(error);
