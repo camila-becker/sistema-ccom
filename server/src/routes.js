@@ -12,9 +12,25 @@ const RelatoriosController = require("./controllers/RelatoriosController");
 const ViagemController = require("./controllers/ViagemController");
 const DDRController = require("./controllers/DDRController");
 const EmailFiliaisController = require("./controllers/EmailFiliaisController");
+const FeedbacksController = require("./controllers/FeedbacksController");
 
 //Login
 routes.post("/api/login", AuthController.authenticate);
+
+/* Feedback */
+
+//Pesquisar feedback
+routes.get("/api/feedbacks", AuthController.validateSession, FeedbacksController.index);
+//Cadastrar feedback
+routes.post(
+  "/api/feedbacks",
+  AuthController.validateSession,
+  FeedbacksController.store
+);
+//Atualizar feedback
+routes.put("/api/feedbacks/:id", AuthController.validateSession, FeedbacksController.update);
+//Deletar feedback
+routes.delete("/api/feedbacks/:id", AuthController.validateSession, FeedbacksController.delete);
 
 /* Atendimento */
 //Pesquisar atendimento
@@ -65,7 +81,7 @@ routes.delete(
 
 /* Usuários */
 //Pesquisar usuario
-routes.get("/api/usuarios", UsuariosController.index);
+routes.get("/api/usuarios", AuthController.validateSession, UsuariosController.index);
 //Cadastrar usuario
 routes.post(
   "/api/usuarios",
@@ -73,9 +89,9 @@ routes.post(
   UsuariosController.store
 );
 //Atualizar usuário
-routes.put("/api/usuarios/:id", UsuariosController.update);
+routes.put("/api/usuarios/:id", AuthController.validateSession, UsuariosController.update);
 //Deletar usuário
-routes.delete("/api/usuarios/:id", UsuariosController.delete);
+routes.delete("/api/usuarios/:id", AuthController.validateSession, UsuariosController.delete);
 
 /* Checklist */
 //Pesquisar checklist

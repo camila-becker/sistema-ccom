@@ -9,6 +9,7 @@ const SolicitarChecklist = require("../models/SolicitarChecklist");
 const Viagem = require("../models/Viagem");
 const DDRModel = require("../models/DDR");
 const EmailFiliais = require("../models/EmailFiliais");
+const Feedback = require("../models/Feedback");
 
 const conexao = new Sequelize(dbConfig);
 
@@ -20,5 +21,6 @@ SolicitarChecklist.init(conexao);
 Viagem.init(conexao);
 DDRModel.init(conexao);
 EmailFiliais.init(conexao);
+Feedback.init(conexao);
 
 module.exports = conexao;
