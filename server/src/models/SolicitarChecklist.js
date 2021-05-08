@@ -20,7 +20,7 @@ class SolicitarChecklist extends Model {
         filial: DataTypes.STRING,
         observacao: DataTypes.STRING,
         status: DataTypes.STRING,
-        data: DataTypes.STRING,
+        data: DataTypes.DATE,
       },
       {
         sequelize,
