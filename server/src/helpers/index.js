@@ -15,7 +15,7 @@ function date() {
   let day = String(currentDate.getDate()).padStart(2, "0");
   let month = String(currentDate.getMonth() + 1).padStart(2, "0");
   let year = currentDate.getFullYear();
-  let hour = currentDate.getHours();
+  let hour = currentDate.getHours() - 3;
   let minutes = currentDate.getMinutes();
   let seconds = currentDate.getSeconds();
 
