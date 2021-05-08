@@ -16,7 +16,7 @@ class Checklist extends Model {
         motivo: DataTypes.STRING,
         status: DataTypes.STRING,
         base: DataTypes.STRING,
-        data: DataTypes.DATE,
+        data: DataTypes.STRING,
         validade: DataTypes.STRING,
         usuario: DataTypes.STRING,
         plataforma: DataTypes.STRING,
