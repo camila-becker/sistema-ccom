@@ -53,7 +53,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       data: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
       },
       validade: {
         type: Sequelize.STRING,
