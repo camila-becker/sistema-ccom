@@ -59,7 +59,7 @@ module.exports = {
         defaultValue: "Aberto",
       },
       data: {
-        type: Sequelize.STRING,
+        type: Sequelize.DATE,
       },
       created_at: {
         type: Sequelize.DATEONLY,
